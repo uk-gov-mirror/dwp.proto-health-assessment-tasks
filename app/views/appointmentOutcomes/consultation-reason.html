@@ -83,18 +83,18 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       </div>
       {% endif %}
 
-      {% if data["appt-reason"] == 'HCP or provider issue' %}
+      {% if data["appt-reason"] == 'Not a claimant issue' %}
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="apptReasonTwo" name="appt-reason" type="radio" value="HCP or provider issue" {{checked}}>
+        <input class="govuk-radios__input" id="apptReasonTwo" name="appt-reason" type="radio" value="Not a claimant issue" {{checked}}>
         <label class="govuk-label govuk-radios__label" for="apptReasonTwo">
-          HCP or provider issue
+          Not a claimant issue
         </label>
       </div>
       {% else %}
        <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="apptReasonTwo" name="appt-reason" type="radio" value="HCP or provider issue">
+        <input class="govuk-radios__input" id="apptReasonTwo" name="appt-reason" type="radio" value="Not a claimant issue">
         <label class="govuk-label govuk-radios__label" for="apptReasonTwo">
-          HCP or provider issue
+          Not a claimant issue
         </label>
       </div>
       {% endif %}

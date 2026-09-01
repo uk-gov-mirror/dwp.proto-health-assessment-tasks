@@ -81,34 +81,50 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       </div>
       {% endif %}
 
-      {% if data["hcp-reason"] == 'Capacity problem' %}
+      {% if data["hcp-reason"] == 'More claimants than capacity' %}
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="hcpReasonTwo" name="hcp-reason" type="radio" value="Capacity problem" {{checked}}>
+        <input class="govuk-radios__input" id="hcpReasonTwo" name="hcp-reason" type="radio" value="More claimants than capacity" {{checked}}>
         <label class="govuk-label govuk-radios__label" for="hcpReasonTwo">
-          Capacity problem
+          More claimants than capacity
         </label>
       </div>
       {% else %}
        <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="hcpReasonTwo" name="hcp-reason" type="radio" value="Capacity problem">
+        <input class="govuk-radios__input" id="hcpReasonTwo" name="hcp-reason" type="radio" value="More claimants than capacity">
         <label class="govuk-label govuk-radios__label" for="hcpReasonTwo">
-          Capacity problem
+          More claimants than capacity
         </label>
       </div>
       {% endif %}
 
-       {% if data["hcp-reason"] == 'Technical failure' %}
+       {% if data["hcp-reason"] == 'DWP technical failure' %}
        <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="hcpReasonThree" name="hcp-reason" type="radio" value="Technical failure" {{checked}}>
+        <input class="govuk-radios__input" id="hcpReasonThree" name="hcp-reason" type="radio" value="DWP technical failure" {{checked}}>
         <label class="govuk-label govuk-radios__label" for="hcpReasonThree">
-          Technical failure
+          DWP technical failure
         </label>
       </div>
         {% else %}
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="hcpReasonThree" name="hcp-reason" type="radio" value="Technical failure">
+        <input class="govuk-radios__input" id="hcpReasonThree" name="hcp-reason" type="radio" value="DWP technical failure">
         <label class="govuk-label govuk-radios__label" for="hcpReasonThree">
-          Technical failure
+          DWP technical failure
+        </label>
+      </div>
+      {% endif %}
+
+       {% if data["hcp-reason"] == 'Assessment provider technical failure' %}
+       <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="hcpReasonThree" name="hcp-reason" type="radio" value="Assessment provider technical failure" {{checked}}>
+        <label class="govuk-label govuk-radios__label" for="hcpReasonThree">
+          Assessment provider technical failure
+        </label>
+      </div>
+        {% else %}
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="hcpReasonThree" name="hcp-reason" type="radio" value="Assessment provider technical failure">
+        <label class="govuk-label govuk-radios__label" for="hcpReasonThree">
+          Assessment provider technical failure
         </label>
       </div>
       {% endif %}
@@ -129,7 +145,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       </div>
        {% endif %}
 
-       {% if data["hcp-reason"] == 'Claimant left before the consultation started' %}
+       <!-- {% if data["hcp-reason"] == 'Claimant left before the consultation started' %}
        <div class="govuk-radios__item">
         <input class="govuk-radios__input" id="hcpReasonFive" name="hcp-reason" type="radio" value="Claimant left before the consultation started" {{checked}}>
         <label class="govuk-label govuk-radios__label" for="hcpReasonFive">
@@ -143,7 +159,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           Claimant left before the consultation started
         </label>
       </div>
-      {% endif %}
+      {% endif %} -->
 
     {% if data["hcp-reason"] == 'Could not wait over 30 minutes' %}
       <div class="govuk-radios__item">
@@ -161,37 +177,55 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       </div>
       {% endif %}
 
-      {% if data["hcp-reason"] == 'Claimant special requirements not met' %}
+      {% if data["hcp-reason"] == 'Claimant special requirements known but not met' %}
        <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="hcpReasonSeven" name="hcp-reason" type="radio" value="Claimant special requirements not met" {{checked}}>
+        <input class="govuk-radios__input" id="hcpReasonSeven" name="hcp-reason" type="radio" value="Claimant special requirements known but not met" {{checked}}>
         <label class="govuk-label govuk-radios__label" for="hcpReasonSeven">
-          Claimant special requirements not met
+          Claimant special requirements known but not met
         </label>
       </div>
        {% else %}
        <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="hcpReasonSeven" name="hcp-reason" type="radio" value="Claimant special requirements not met">
+        <input class="govuk-radios__input" id="hcpReasonSeven" name="hcp-reason" type="radio" value="Claimant special requirements known but not met">
         <label class="govuk-label govuk-radios__label" for="hcpReasonSeven">
-          Claimant special requirements not met
+          Claimant special requirements known but not met
         </label>
       </div>
        {% endif %}
 
-       {% if data["hcp-reason"] == 'Room accomodation problem' %}
+       {% if data["hcp-reason"] == 'Accommodation problem outside control' %}
        <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="hcpReasonEight" name="hcp-reason" type="radio" value="Room accomodation problem" {{checked}}>
+        <input class="govuk-radios__input" id="hcpReasonEight" name="hcp-reason" type="radio" value="Accommodation problem outside control" {{checked}}>
         <label class="govuk-label govuk-radios__label" for="hcpReasonEight">
-          Room accomodation problem
+          Accommodation problem outside control
         </label>
       </div>
         {% else %}
         <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="hcpReasonEight" name="hcp-reason" type="radio" value="Room accomodation problem">
+        <input class="govuk-radios__input" id="hcpReasonEight" name="hcp-reason" type="radio" value="Accommodation problem outside control">
         <label class="govuk-label govuk-radios__label" for="hcpReasonEight">
-          Room accomodation problem
+          Accommodation problem outside control
         </label>
       </div>
        {% endif %}
+
+        {% if data["hcp-reason"] == 'Accommodation problem within control' %}
+       <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="hcpReasonEight" name="hcp-reason" type="radio" value="Accommodation problem within control" {{checked}}>
+        <label class="govuk-label govuk-radios__label" for="hcpReasonEight">
+          Accommodation problem within control
+        </label>
+      </div>
+        {% else %}
+        <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="hcpReasonEight" name="hcp-reason" type="radio" value="Accommodation problem within control">
+        <label class="govuk-label govuk-radios__label" for="hcpReasonEight">
+          Accommodation problem within control
+        </label>
+      </div>
+       {% endif %}
+
+       
 
     </div>
   </fieldset>
@@ -211,7 +245,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       <p><a href="attendees-addAnother">Cancel</a></p>
       {% else %}
       <p><a href="attendees-none">Cancel</a></p>
-      {% endif %}  test-->
+      {% endif %}  test1-->
      </div>
 </div>
 

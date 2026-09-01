@@ -53,7 +53,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
              
   </style>
 
- <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+ <a href="appointment?source=Appointment outcome" class="govuk-back-link">Back</a>
 
   <form action="#" method="post" id="auto-redirect">
      
@@ -61,23 +61,42 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
   <fieldset class="govuk-fieldset">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
       <h1 class="govuk-fieldset__heading">
-        Was the consultation completed?
+        Was the appointment completed?
       </h1>
     </legend>
+    {% if data["consultation-completed"] == 'Yes' %}
     <div class="govuk-radios" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="consultationOptOne" name="consultation-completed" type="radio" value="Yes" {{checked}}>
+        <label class="govuk-label govuk-radios__label" for="consultationOptOne">
+           Yes, complete and submit report
+        </label>
+      </div>
+    {% else %}
       <div class="govuk-radios__item">
         <input class="govuk-radios__input" id="consultationOptOne" name="consultation-completed" type="radio" value="Yes">
         <label class="govuk-label govuk-radios__label" for="consultationOptOne">
-           Yes
+           Yes, complete and submit report
         </label>
       </div>
+    {% endif %}
+    {% if data["consultation-completed"] == 'No' %}
       <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="consultationOptTwo" name="consultation-completed" type="radio" value="No" {{checked}}>
+        <label class="govuk-label govuk-radios__label" for="consultationOptTwo">
+          No
+        </label>
+      </div>
+    </div>
+    {% else %}
+    <div class="govuk-radios__item">
         <input class="govuk-radios__input" id="consultationOptTwo" name="consultation-completed" type="radio" value="No">
         <label class="govuk-label govuk-radios__label" for="consultationOptTwo">
           No
         </label>
       </div>
     </div>
+     {% endif %}
   </fieldset>
 </div>
 

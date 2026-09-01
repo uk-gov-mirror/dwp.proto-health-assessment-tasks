@@ -64,7 +64,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         Select a reason why the appointment could not be completed
       </h1>
     </legend>
-    {% if data["claimant-reason"] == 'Appointment was abandoned' %}
+    <!-- {% if data["claimant-reason"] == 'Appointment was abandoned' %}
     <div class="govuk-radios" data-module="govuk-radios">
       <div class="govuk-radios__item">
         <input class="govuk-radios__input" id="claimReasonOne" name="claimant-reason" type="radio" value="Appointment was abandoned" {{checked}}>
@@ -79,9 +79,10 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           Appointment was abandoned
         </label>
       </div>
-      {% endif %}
+      {% endif %} -->
 
       {% if data["claimant-reason"] == 'Claimant failed to attend' %}
+    <div class="govuk-radios" data-module="govuk-radios">
       <div class="govuk-radios__item">
         <input class="govuk-radios__input" id="claimReasonTwo" name="claimant-reason" type="radio" value="Claimant failed to attend" {{checked}}>
         <label class="govuk-label govuk-radios__label" for="claimReasonTwo">
@@ -97,18 +98,18 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       </div>
       {% endif %}
 
-      {% if data["claimant-reason"] == 'Claimant would not wait for 30 minutes' %}
+      {% if data["claimant-reason"] == 'Claimant could not wait for 30 minutes' %}
        <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="claimReasonThree" name="claimant-reason" type="radio" value="Claimant would not wait for 30 minutes" {{checked}}>
+        <input class="govuk-radios__input" id="claimReasonThree" name="claimant-reason" type="radio" value="Claimant could not wait for 30 minutes" {{checked}}>
         <label class="govuk-label govuk-radios__label" for="claimReasonThree">
-          Claimant would not wait for 30 minutes
+          Claimant could not wait for 30 minutes
         </label>
       </div>
        {% else %}
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="claimReasonThree" name="claimant-reason" type="radio" value="Claimant would not wait for 30 minutes">
+        <input class="govuk-radios__input" id="claimReasonThree" name="claimant-reason" type="radio" value="Claimant could not wait for 30 minutes">
         <label class="govuk-label govuk-radios__label" for="claimReasonThree">
-          Claimant would not wait for 30 minutes
+          Claimant could not wait for 30 minutes
         </label>
       </div>
        {% endif %}
@@ -193,8 +194,56 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       </div>
        {% endif %}
 
-       {% if data["claimant-reason"] == 'Claimant failed to comply' %}
+        {% if data["claimant-reason"] == 'Claimant unfit to be assessed' %}
        <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="claimReasonEight" name="claimant-reason" type="radio" value="Claimant unfit to be assessed" {{checked}}>
+        <label class="govuk-label govuk-radios__label" for="claimReasonEight">
+          Claimant unfit to be assessed
+        </label>
+      </div>
+      {% else %}
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="claimReasonEight" name="claimant-reason" type="radio" value="Claimant unfit to be assessed">
+        <label class="govuk-label govuk-radios__label" for="claimReasonEight">
+          Claimant unfit to be assessed
+        </label>
+      </div>
+       {% endif %}
+
+        {% if data["claimant-reason"] == 'Claimant not with appropriate appointee' %}
+       <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="claimReasonEight" name="claimant-reason" type="radio" value="Claimant not with appropriate appointee" {{checked}}>
+        <label class="govuk-label govuk-radios__label" for="claimReasonEight">
+          Claimant not with appropriate appointee
+        </label>
+      </div>
+      {% else %}
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="claimReasonEight" name="claimant-reason" type="radio" value="Claimant not with appropriate appointee">
+        <label class="govuk-label govuk-radios__label" for="claimReasonEight">
+           Claimant not with appropriate appointee
+        </label>
+      </div>
+       {% endif %}
+
+       {% if data["claimant-reason"] == 'Claimant unable to continue consultation' %}
+       <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="claimReasonEight" name="claimant-reason" type="radio" value="Claimant unable to continue consultation" {{checked}}>
+        <label class="govuk-label govuk-radios__label" for="claimReasonEight">
+          Claimant unable to continue consultation
+        </label>
+      </div>
+      {% else %}
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="claimReasonEight" name="claimant-reason" type="radio" value="Claimant unable to continue consultation">
+        <label class="govuk-label govuk-radios__label" for="claimReasonEight">
+           Claimant unable to continue consultation
+        </label>
+      </div>
+       {% endif %}
+
+      <!--  {% if data["claimant-reason"] == 'Claimant failed to comply' %}
+        <div class="govuk-radios__item">
         <input class="govuk-radios__input" id="claimReasonNine" name="claimant-reason" type="radio" value="Claimant failed to comply" {{checked}}>
         <label class="govuk-label govuk-radios__label" for="claimReasonNine">
           Claimant failed to comply
@@ -207,8 +256,9 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           Claimant failed to comply
         </label>
       </div>
-       {% endif %}
+       {% endif %} -->
     </div>
+
   </fieldset>
   <div class="govuk-form-group">
   <label class="govuk-label" for="more-detail">

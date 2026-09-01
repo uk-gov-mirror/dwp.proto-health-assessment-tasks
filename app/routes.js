@@ -10925,7 +10925,7 @@ router.post('/appointmentOutcomes/consultation-reason', function (req, res) {
   if (req.session.data['appt-reason'] == "Claimant issue") {
     res.redirect('/appointmentOutcomes/claimant-reason')
   } else {
-    res.redirect('/appointmentOutcomes/hcp-reason')
+    res.redirect('/appointmentOutcomes/HCP-reason')
   }
 })
 
@@ -10935,7 +10935,7 @@ router.post('/appointmentOutcomes/claimant-reason', function (req, res) {
  
 })
 
-router.post('/appointmentOutcomes/hcp-reason', function (req, res) {
+router.post('/appointmentOutcomes/HCP-reason', function (req, res) {
 
  res.redirect('/appointmentOutcomes/appointment?source=Appointment outcome')
  
