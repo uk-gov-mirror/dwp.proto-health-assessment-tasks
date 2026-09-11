@@ -142,42 +142,7 @@ module.exports = function setupNodeEvents (on, config) {
     .catch((err) => err.code !== 'ENOENT' ? err : null
     )
 
-  const download = async (url, zipFile) => {
-    return new Promise((resolve, reject) => {
-      log(`downloading => ${url}`)
-      const request = https.get(url, response => {
-        if (response.statusCode === 200) {
-          const filename = path.join(downloadsFolder, zipFile)
-          log(`writing => ${filename}`)
-          const file = fs.createWriteStream(filename, { flags: 'wx' })
-          file.on('finish', () => resolve(filename))
-          file.on('error', (err) => {
-            file.close()
-            fs.unlink(downloadsFolder, () => {
-              log(`writing => ${filename} => ${err.message}`)
-              reject(err.message)
-            }) // Delete temp file
-          })
-          response.pipe(file)
-        } else if (response.statusCode === 302 || response.statusCode === 301) {
-          // Recursively follow redirects, only a 200 will resolve.
-          const { location } = response.headers
-          if (!zipFile && location.endsWith('.zip')) {
-            const uri = new URL(location)
-            zipFile = uri.pathname.split('/').pop()
-          }
-          return download(location, zipFile).then((filename) =>
-            resolve(filename))
-        } else {
-          reject(new Error(`Server responded with ${response.statusCode}: ${response.statusMessage}`))
-        }
-      })
 
-      request.on('error', err => {
-        reject(err.message)
-      })
-    })
-  }
 
   const getPathFromProjectRoot = (...all) => path.join(...[config.env.projectFolder].concat(all))
   const pathToPackageFile = packageName => getPathFromProjectRoot('node_modules', packageName, 'package.json')

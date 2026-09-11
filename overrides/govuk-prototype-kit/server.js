@@ -144,7 +144,7 @@ app.get(/\.(html|htm|njk)$/i, (req, res) => {
   const parts = path.split('.')
   parts.pop()
   path = parts.join('.')
-  res.redirect(path)
+   res.redirect(url);
 })
 
 // Auto render any view that exists
@@ -156,11 +156,7 @@ app.get(/^([^.]+)$/, async (req, res, next) => {
 
 // Redirect all POSTs to GETs - this allows users to use POST for autoStoreData
 app.post(/^\/([^.]+)$/, (req, res) => {
-  res.redirect(url.format({
-    pathname: '/' + req.params[0],
-    query: req.query
-  })
-  )
+  res.redirect(url);
 })
 
 // redirect old local docs to the docs site

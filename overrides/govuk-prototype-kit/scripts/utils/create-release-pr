@@ -21,7 +21,7 @@ async function exec (command, { allowStderr = false, hideStd = false, allowError
     if (inheritStd) {
       config.stdio = 'pipe'
     }
-    cp.exec(command, config,
+    
       (error, stdout, stderr) => {
         if (error && !allowErrorCode) {
           console.log(`error: ${error.message}`)
@@ -44,26 +44,9 @@ async function exec (command, { allowStderr = false, hideStd = false, allowError
         }
         resolve(`${stdout}`)
       })
-  })
-  return newVersion
-}
+  }
 
-function spawnWithTty (command, args = []) {
-  return new Promise((resolve, reject) => {
-    const result = cp.spawn(command, args, {
-      cwd: projectDir,
-      stdio: 'inherit'
-    })
-    result.on('exit', function (code, signal) {
-      if (code === 0) {
-        resolve()
-      } else {
-        reject(new Error('Command failed'))
-      }
-    })
-  })
-}
-
+   
 const wait = time => new Promise((resolve) => setTimeout(resolve, time))
 
 ;(async () => {
